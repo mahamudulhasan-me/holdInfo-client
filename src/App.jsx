@@ -39,7 +39,7 @@ const App = () => {
   const { base_unit } = data;
 
   return (
-    <div className="md:px-10 px-5 pt-5 dark:bg-[#191d28] min-h-screen">
+    <div className="md:px-10 px-5 pt-5 bg-[#191d28] min-h-screen">
       <header className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
         <div>
           <img src={logo} alt="" className="w-72" />

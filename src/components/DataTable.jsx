@@ -12,7 +12,7 @@ const DataTable = ({ data }) => {
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50 dark:bg-gray-900 text-center">
+        <thead className=" bg-gray-900 text-center">
           <tr>
             <th className="px-6 py-3   font-medium text-gray-500 uppercase tracking-wider">
               #
@@ -34,17 +34,17 @@ const DataTable = ({ data }) => {
             </th>
           </tr>
         </thead>
-        <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:text-white text-center text-2xl">
+        <tbody className="divide-y divide-gray-200 bg-gray-800 text-white text-center text-2xl">
           <tr>
-            <td className="px-6 py-4 whitespace-nowrap  text-gray-500">1</td>
-            <td className="px-6 py-4 whitespace-nowrap  text-gray-500 flex items-center gap-2">
+            <td className="px-6 py-4 whitespace-nowrap  ">1</td>
+            <td className="px-6 py-4 whitespace-nowrap   flex items-center gap-2">
               <img src={wiser} alt="" className="w-6 h-6" />
               WazirX
             </td>
-            <td className="px-6 py-4 whitespace-nowrap  text-gray-500">
+            <td className="px-6 py-4 whitespace-nowrap  ">
               ₹ {parseInt(last).toLocaleString()}
             </td>
-            <td className="px-6 py-4 whitespace-nowrap  text-gray-500">
+            <td className="px-6 py-4 whitespace-nowrap  ">
               ₹ {buyPrice} / ₹ {sellPrice}
             </td>
             <td
