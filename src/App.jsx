@@ -9,7 +9,7 @@ const App = () => {
   const [cryptoName, setCryptoName] = useState("btc");
   const [activeDark, setActiveDark] = useState(true);
   const [countdown, setCountdown] = useState(60);
-  const yes = false;
+
   useEffect(() => {
     fetch(`http://localhost:5000/get-data/${cryptoName}`)
       .then((res) => res.json())
@@ -35,10 +35,12 @@ const App = () => {
         .then((data) => setData(data[0]));
     }
   }, [countdown, cryptoName]);
+
   const { base_unit } = data;
+
   return (
-    <div className="px-10 pt-5 dark:bg-[#191d28] min-h-screen">
-      <header className="flex justify-between items-center">
+    <div className="md:px-10 px-5 pt-5 dark:bg-[#191d28] min-h-screen">
+      <header className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
         <div>
           <img src={logo} alt="" className="w-72" />
         </div>
@@ -62,7 +64,6 @@ const App = () => {
             </option>
             <option value="xrp">XRP</option>
             <option value="eth">ETH</option>
-
             <option value="trx">TRX</option>
             <option value="eos">EOS</option>
             <option value="zil">ZIL</option>
@@ -100,11 +101,11 @@ const App = () => {
       {data ? (
         <main>
           <BestPriceTrade data={data} />
-          <table className="w-full mt-5 ">
-            <DataTable data={data} />
-          </table>
+
+          <DataTable data={data} />
         </main>
       ) : (
+        // loader
         <div className="flex justify-center items-center h-[calc(100vh-80px)]">
           <Grid
             height="80"
