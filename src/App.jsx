@@ -11,7 +11,7 @@ const App = () => {
   const [countdown, setCountdown] = useState(60);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/get-data/${cryptoName}`)
+    fetch(`https://hold-info-server-rho.vercel.app/get-data/${cryptoName}`)
       .then((res) => res.json())
       .then((data) => setData(data[0]));
   }, [cryptoName]);
@@ -30,7 +30,7 @@ const App = () => {
     if (countdown === 0) {
       setCountdown(60); // Reset countdown to 60
       // Refetch data after 1 minute
-      fetch(`http://localhost:5000/get-data/${cryptoName}`)
+      fetch(`https://hold-info-server-rho.vercel.app/get-data/${cryptoName}`)
         .then((res) => res.json())
         .then((data) => setData(data[0]));
     }

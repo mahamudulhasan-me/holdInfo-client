@@ -12,7 +12,7 @@ const BestPriceTrade = ({ data }) => {
         <h4 className="dark:text-dark2 text-xl">5 Min</h4>
       </div>
       <div className="text-center">
-        <h1 className="text-p1 text-[2.5rem]">{fiveMin * 2} %</h1>
+        <h1 className="text-p1 text-[2.5rem]">{(fiveMin * 2).toFixed(2)} %</h1>
         <h4 className="dark:text-dark2 text-xl">1 Hour</h4>
       </div>
       <div className="text-center">
