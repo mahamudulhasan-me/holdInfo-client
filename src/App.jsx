@@ -50,7 +50,7 @@ const App = () => {
       <main>
         <BestPriceTrade />
         <table className="w-full mt-5 ">
-          <DataTable />
+          <DataTable data={data} />
         </table>
       </main>
     </div>

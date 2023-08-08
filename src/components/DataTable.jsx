@@ -1,6 +1,13 @@
 import React from "react";
 import wiser from "../assets/wiszerx.png";
-const DataTable = () => {
+const DataTable = ({ data }) => {
+  const { last, sell, buy } = data;
+  const buyPrice = Math.ceil(parseInt(buy)).toLocaleString();
+  const sellPrice = parseInt(sell).toLocaleString();
+  // Calculate difference and savings
+  const difference = parseInt(buy) - parseInt(last);
+  const percentageDifference = ((difference / parseInt(buy)) * 100).toFixed(2);
+  const savings = parseInt(sell) - parseInt(buy);
   return (
     <>
       <thead>
@@ -20,10 +27,24 @@ const DataTable = () => {
             <img src={wiser} alt="" className="w-10" />
             WazirX
           </td>
-          <td>₹ 24,98,704</td>
-          <td>₹ 25,00,000 / ₹ 25,14,900</td>
-          <td>-4.78 %</td>
-          <td className="rounded-r-xl">▼ ₹ 1,25,406</td>
+          <td>₹ {parseInt(last).toLocaleString()}</td>
+          <td>
+            ₹ {buyPrice} / ₹ {sellPrice}
+          </td>
+          <td
+            className={`${
+              percentageDifference > 0 ? "text-p1" : "text-red-500"
+            }`}
+          >
+            {percentageDifference}%
+          </td>
+          <td
+            className={`rounded-r-xl  ${
+              percentageDifference > 0 ? "text-p1" : "text-red-500"
+            }`}
+          >
+            {percentageDifference > 0 ? "▲" : "▼"} ₹ {savings}
+          </td>
         </tr>
       </tbody>
     </>
